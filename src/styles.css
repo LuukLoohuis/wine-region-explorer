@@ -142,3 +142,146 @@
     color: var(--color-foreground);
   }
 }
+
+/* ============ Wine Region Finder theme ============ */
+@theme {
+  --color-wine-bg: #1a0a0a;
+  --color-wine-panel: #2a1010;
+  --color-wine-card: #3a1a1a;
+  --color-wine-border: #4a2a2a;
+  --color-wine-red: #722F37;
+  --color-wine-mid: #9B4A5A;
+  --color-wine-light: #c8b8a2;
+  --color-wine-cream: #f0e8d8;
+  --color-wine-gold: #C9A84C;
+
+  --color-terroir-bg: #1C0A00;
+  --color-terroir-panel: #2D1200;
+  --color-terroir-card: #3D1A00;
+  --color-terroir-border: #5A2800;
+  --color-terroir-red: #8B3A3A;
+  --color-terroir-deep: #5C1A1A;
+  --color-terroir-warm: #c49a8a;
+  --color-terroir-gold: #D4A96A;
+  --color-terroir-cream: #F5EDD8;
+  --color-terroir-light: #C8B49A;
+
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-body: "Crimson Text", Georgia, serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --font-sans: Inter, system-ui, sans-serif;
+}
+
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; }
+  body {
+    background: #1C0A00;
+    color: #F5EDD8;
+    font-family: Inter, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4 {
+    font-family: "Playfair Display", Georgia, serif;
+  }
+}
+
+@utility terroir-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  border-radius: 0.5rem;
+  background: #8B3A3A;
+  color: #F5EDD8;
+  border: 1px solid rgb(139 58 58 / 0.6);
+  transition: all 150ms;
+  cursor: pointer;
+  box-shadow: 0 2px 12px rgba(139,58,58,0.45);
+}
+@utility terroir-btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.375rem 0.75rem;
+  font-size: 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid #5A2800;
+  color: #C8B49A;
+  background: transparent;
+  cursor: pointer;
+  transition: all 150ms;
+}
+@utility terroir-input {
+  width: 100%;
+  background: #3D1A00;
+  border: 1px solid #5A2800;
+  color: #F5EDD8;
+  font-size: 0.875rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  outline: none;
+}
+@utility terroir-label {
+  display: block;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: rgb(200 180 154 / 0.6);
+  margin-bottom: 0.25rem;
+  font-family: Inter, sans-serif;
+}
+@utility wine-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  border-radius: 0.5rem;
+  background: #8B3A3A;
+  color: #F5EDD8;
+  border: 1px solid rgb(139 58 58 / 0.6);
+  transition: all 150ms;
+  cursor: pointer;
+  box-shadow: 0 2px 12px rgba(139,58,58,0.45);
+}
+@utility wine-btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.375rem 0.75rem;
+  font-size: 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid #5A2800;
+  color: #C8B49A;
+  background: transparent;
+  cursor: pointer;
+}
+@utility wine-input {
+  width: 100%;
+  background: #3D1A00;
+  border: 1px solid #5A2800;
+  color: #F5EDD8;
+  font-size: 0.875rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  outline: none;
+}
+@utility panel-border {
+  border: 1px solid #5A2800;
+}
+
+.terroir-btn:hover { background: #5C1A1A; }
+.terroir-btn-ghost:hover, .wine-btn-ghost:hover { border-color: #D4A96A; color: #D4A96A; }
+.wine-btn:hover { background: #5C1A1A; }
+
+.mapboxgl-popup-content { background: transparent !important; padding: 0 !important; box-shadow: none !important; }
+.mapboxgl-popup-tip { display: none !important; }
+
+@keyframes region-pulse {
+  0%   { opacity: 0.9; }
+  50%  { opacity: 0.3; }
+  100% { opacity: 0.9; }
+}
